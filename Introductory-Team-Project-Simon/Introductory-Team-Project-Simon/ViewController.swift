@@ -1,18 +1,10 @@
-//
-//  ViewController.swift
-//  Introductory-Team-Project-Simon
-//
-//  Created by Team Blue on 9/3/15.
-//  Copyright © 2015 Team Blue Mobile App 2015. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        testing()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +12,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func testing(){
+        //Creating of SimonGame object
+        let game = SimonGame()
+        game.printCorrectPattern()
+        
+        //Creates a copy of that patern [Int[
+        let pattern = game.getPattern()
+        print(pattern.description)
+    }
 }
 

@@ -14,6 +14,7 @@
 		F17C9CB61B98D9B00023156E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C9CB41B98D9B00023156E /* LaunchScreen.storyboard */; };
 		F17C9CC11B98D9B00023156E /* Introductory_Team_Project_SimonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C9CC01B98D9B00023156E /* Introductory_Team_Project_SimonTests.swift */; };
 		F17C9CCC1B98D9B00023156E /* Introductory_Team_Project_SimonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C9CCB1B98D9B00023156E /* Introductory_Team_Project_SimonUITests.swift */; };
+		F1C1A25C1B9BCF7300B95E31 /* SimonGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1A25B1B9BCF7300B95E31 /* SimonGame.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F17C9CC71B98D9B00023156E /* Introductory-Team-Project-SimonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Introductory-Team-Project-SimonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17C9CCB1B98D9B00023156E /* Introductory_Team_Project_SimonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introductory_Team_Project_SimonUITests.swift; sourceTree = "<group>"; };
 		F17C9CCD1B98D9B00023156E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1C1A25B1B9BCF7300B95E31 /* SimonGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimonGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F17C9CAB1B98D9B00023156E /* AppDelegate.swift */,
 				F17C9CAD1B98D9B00023156E /* ViewController.swift */,
+				F1C1A25B1B9BCF7300B95E31 /* SimonGame.swift */,
 				F17C9CAF1B98D9B00023156E /* Main.storyboard */,
 				F17C9CB21B98D9B00023156E /* Assets.xcassets */,
 				F17C9CB41B98D9B00023156E /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			files = (
 				F17C9CAE1B98D9B00023156E /* ViewController.swift in Sources */,
 				F17C9CAC1B98D9B00023156E /* AppDelegate.swift in Sources */,
+				F1C1A25C1B9BCF7300B95E31 /* SimonGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +485,7 @@
 				F17C9CD21B98D9B00023156E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F17C9CD31B98D9B00023156E /* Build configuration list for PBXNativeTarget "Introductory-Team-Project-SimonTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +494,7 @@
 				F17C9CD51B98D9B00023156E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F17C9CD61B98D9B00023156E /* Build configuration list for PBXNativeTarget "Introductory-Team-Project-SimonUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +503,7 @@
 				F17C9CD81B98D9B00023156E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
