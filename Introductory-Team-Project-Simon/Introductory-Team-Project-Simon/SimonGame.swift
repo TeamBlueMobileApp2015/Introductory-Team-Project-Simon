@@ -27,5 +27,3 @@ class SimonGame{
         return pattern
     }
 }
-
-S
