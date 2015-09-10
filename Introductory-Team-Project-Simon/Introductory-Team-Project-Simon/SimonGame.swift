@@ -4,9 +4,11 @@ class SimonGame{
     
     //Contains the random pattern that will be displayed
     private var pattern = [Int]()
+    private var gamePosition : Int = 0;
+    private var hasLost : Bool = false;
     
     init(){
-        createPattern(12)
+        self.createPattern(12)
     }
     
     //Fills the int array pattern with numbers from 0...1 
@@ -26,4 +28,21 @@ class SimonGame{
     func getPattern()->[Int]{
         return pattern
     }
+    
+    func checkMove(move : Int) -> Bool {
+        // Since this is a post increment, it will increment after the value is accessed.
+        return (Bool)(self.hasLost = (self.getPattern()[self.gamePosition++] != move))
+    }
+    
+    func gameOver() -> Bool {
+        // If the user has lost the game is over, if the game position is greater than pattern than the user has obviously won
+        // and henceforth the game is over. This is to be combined with hasLost
+        return (self.gamePosition >= pattern.count) || self.hasLost
+    }
+    
+    // This must be combined with gameOver to determine if the user has won
+    func hasLostTheGame() -> Bool {
+        return self.hasLost
+    }
+    
 }
