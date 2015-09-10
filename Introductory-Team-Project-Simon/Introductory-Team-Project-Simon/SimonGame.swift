@@ -45,4 +45,8 @@ class SimonGame{
         return self.hasLost
     }
     
+    func hasWon() -> Bool {
+        return !self.hasLost && self.gameOver()
+    }
+    
 }
