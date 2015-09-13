@@ -84,6 +84,7 @@ class ViewController: UIViewController {
         }
         
         // Add in highest score check here...
+        // Use HighscoreAdapter
         
         if self.game.hasLostTheGame() {
             let alert = UIAlertView()
