@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBAction func NewGame_Tap(sender: UIButton) {
         self.game = SimonGame()
         self.current_score.text = "0"
+        print(self.game.getPattern())
     }
     
     //GREEN Button
