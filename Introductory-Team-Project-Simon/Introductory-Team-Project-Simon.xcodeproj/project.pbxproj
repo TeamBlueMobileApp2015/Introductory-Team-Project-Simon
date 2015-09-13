@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		447B7D771BA4F36F00F2979F /* SOX_Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B7D761BA4F36F00F2979F /* SOX_Alpha.swift */; };
 		447B7D791BA4F37C00F2979F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447B7D781BA4F37C00F2979F /* Main.storyboard */; };
+		94655ED41BA6305F007151D3 /* StorageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94655ED31BA6305F007151D3 /* StorageFacade.swift */; };
 		F17C9CAC1B98D9B00023156E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C9CAB1B98D9B00023156E /* AppDelegate.swift */; };
 		F17C9CAE1B98D9B00023156E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C9CAD1B98D9B00023156E /* ViewController.swift */; };
 		F17C9CB31B98D9B00023156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17C9CB21B98D9B00023156E /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		447B7D761BA4F36F00F2979F /* SOX_Alpha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOX_Alpha.swift; sourceTree = "<group>"; };
 		447B7D781BA4F37C00F2979F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		94655ED31BA6305F007151D3 /* StorageFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageFacade.swift; sourceTree = "<group>"; };
 		F17C9CA81B98D9B00023156E /* Introductory-Team-Project-Simon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Introductory-Team-Project-Simon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17C9CAB1B98D9B00023156E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17C9CAD1B98D9B00023156E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				F17C9CB21B98D9B00023156E /* Assets.xcassets */,
 				F17C9CB41B98D9B00023156E /* LaunchScreen.storyboard */,
 				F17C9CB71B98D9B00023156E /* Info.plist */,
+				94655ED31BA6305F007151D3 /* StorageFacade.swift */,
 			);
 			path = "Introductory-Team-Project-Simon";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				F17C9CAE1B98D9B00023156E /* ViewController.swift in Sources */,
 				447B7D771BA4F36F00F2979F /* SOX_Alpha.swift in Sources */,
+				94655ED41BA6305F007151D3 /* StorageFacade.swift in Sources */,
 				F17C9CAC1B98D9B00023156E /* AppDelegate.swift in Sources */,
 				F1C1A25C1B9BCF7300B95E31 /* SimonGame.swift in Sources */,
 			);
