@@ -13,8 +13,9 @@ class HighscoreAdapter {
     private let HIGHSCORE_STRING = "Highscore"
     private let storage = StorageFacade()
     
-    func GetHighScore() -> String {
-        return storage.getString(HIGHSCORE_STRING)
+    func GetHighScore() -> Int {
+        let stringValue = storage.getString(HIGHSCORE_STRING)
+        return Int(stringValue)!
     }
     
     func SetHighScore(value : Int) {
