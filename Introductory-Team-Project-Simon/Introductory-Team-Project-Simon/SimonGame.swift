@@ -6,6 +6,7 @@ class SimonGame{
     private var pattern = [Int]()
     private var gamePosition : Int = 0;
     private var hasLost : Bool = false;
+    private var score : Int = 0
     
     init(){
         self.createPattern(12)
@@ -29,9 +30,14 @@ class SimonGame{
         return pattern
     }
     
+    // Returns if they haven't lost
     func checkMove(move : Int) -> Bool {
         // Since this is a post increment, it will increment after the value is accessed.
-        return (Bool)(self.hasLost = (self.getPattern()[self.gamePosition++] != move))
+        let hasntLost = !(Bool)(self.hasLost = (self.getPattern()[self.gamePosition++] != move))
+        if !hasLost {
+            self.score++
+        }
+        return hasntLost
     }
     
     func gameOver() -> Bool {
@@ -47,6 +53,10 @@ class SimonGame{
     
     func hasWon() -> Bool {
         return !self.hasLost && self.gameOver()
+    }
+    
+    func getScore() -> Int {
+        return self.score
     }
     
 }
