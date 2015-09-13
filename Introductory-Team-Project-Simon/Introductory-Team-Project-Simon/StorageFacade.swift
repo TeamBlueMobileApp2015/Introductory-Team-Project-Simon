@@ -17,7 +17,7 @@ class StorageFacade {
     }
     
     func setString(key : String, value : String) {
-        self.defaults.setValue(value: value, forKey: key)
+        self.defaults.setObject(value, forKey: key)
         self.defaults.synchronize()
     }
     
