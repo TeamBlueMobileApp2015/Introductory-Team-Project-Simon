@@ -3,8 +3,9 @@ import UIKit
 class ViewController: UIViewController {
 
     private var game = SimonGame()
+    private let soundAdapter = SoundAdapter()
     
-    private enum Buttons : Int {
+    public enum Buttons : Int {
         case Green = 0
         case Red = 1
         case Yellow = 2
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
     @IBAction func Green_Button_Tap(sender: UIButton) {
         print("0 - Green Button")
         self.clicked_Button(Buttons.Green.rawValue)
+        self.soundAdapter.PlaySound(Buttons.Green.rawValue)
     }
     @IBAction func Green_Button_Release(sender: UIButton) {
         print("-Green Button")
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
     @IBAction func Red_Button_Tap(sender: UIButton) {
         print("1 - Red Button")
         self.clicked_Button(Buttons.Red.rawValue)
+        self.soundAdapter.PlaySound(Buttons.Red.rawValue)
     }
     @IBAction func Red_Button_Release(sender: UIButton) {
         print("-Red Button")
@@ -55,6 +58,7 @@ class ViewController: UIViewController {
     @IBAction func Yellow_Button_Tap(sender: UIButton) {
         print("2 - Yellow Button")
         self.clicked_Button(Buttons.Yellow.rawValue)
+        self.soundAdapter.PlaySound(Buttons.Yellow.rawValue)
     }
     @IBAction func Yellow_Button_Release(sender: UIButton) {
         print("-Yellow Button")
@@ -65,6 +69,7 @@ class ViewController: UIViewController {
     @IBAction func Blue_Button_Tap(sender: UIButton) {
         print("3 - Blue Button")
         self.clicked_Button(Buttons.Blue.rawValue)
+        self.soundAdapter.PlaySound(Buttons.Blue.rawValue)
     }
     
     @IBAction func Blue_Button_Release(sender: UIButton) {

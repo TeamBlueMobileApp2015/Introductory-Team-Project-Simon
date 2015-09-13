@@ -11,6 +11,11 @@
 		447B7D791BA4F37C00F2979F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447B7D781BA4F37C00F2979F /* Main.storyboard */; };
 		94655ED41BA6305F007151D3 /* StorageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94655ED31BA6305F007151D3 /* StorageFacade.swift */; };
 		94655ED61BA632C5007151D3 /* HighscoreAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94655ED51BA632C5007151D3 /* HighscoreAdapter.swift */; };
+		94655EDD1BA63A2F007151D3 /* Tone-A.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94655ED91BA63A2F007151D3 /* Tone-A.wav */; };
+		94655EDE1BA63A2F007151D3 /* Tone-B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94655EDA1BA63A2F007151D3 /* Tone-B.wav */; };
+		94655EDF1BA63A2F007151D3 /* Tone-C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94655EDB1BA63A2F007151D3 /* Tone-C.wav */; };
+		94655EE01BA63A2F007151D3 /* Tone-D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94655EDC1BA63A2F007151D3 /* Tone-D.wav */; };
+		94655EE21BA63A84007151D3 /* SoundAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94655EE11BA63A84007151D3 /* SoundAdapter.swift */; };
 		F17C9CAC1B98D9B00023156E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C9CAB1B98D9B00023156E /* AppDelegate.swift */; };
 		F17C9CAE1B98D9B00023156E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C9CAD1B98D9B00023156E /* ViewController.swift */; };
 		F17C9CB31B98D9B00023156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17C9CB21B98D9B00023156E /* Assets.xcassets */; };
@@ -42,6 +47,11 @@
 		447B7D781BA4F37C00F2979F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		94655ED31BA6305F007151D3 /* StorageFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageFacade.swift; sourceTree = "<group>"; };
 		94655ED51BA632C5007151D3 /* HighscoreAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreAdapter.swift; sourceTree = "<group>"; };
+		94655ED91BA63A2F007151D3 /* Tone-A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Tone-A.wav"; path = "../../../../../Downloads/App_Sound/Tone-A.wav"; sourceTree = "<group>"; };
+		94655EDA1BA63A2F007151D3 /* Tone-B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Tone-B.wav"; path = "../../../../../Downloads/App_Sound/Tone-B.wav"; sourceTree = "<group>"; };
+		94655EDB1BA63A2F007151D3 /* Tone-C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Tone-C.wav"; path = "../../../../../Downloads/App_Sound/Tone-C.wav"; sourceTree = "<group>"; };
+		94655EDC1BA63A2F007151D3 /* Tone-D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Tone-D.wav"; path = "../../../../../Downloads/App_Sound/Tone-D.wav"; sourceTree = "<group>"; };
+		94655EE11BA63A84007151D3 /* SoundAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundAdapter.swift; sourceTree = "<group>"; };
 		F17C9CA81B98D9B00023156E /* Introductory-Team-Project-Simon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Introductory-Team-Project-Simon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17C9CAB1B98D9B00023156E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17C9CAD1B98D9B00023156E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +115,10 @@
 		F17C9CAA1B98D9B00023156E /* Introductory-Team-Project-Simon */ = {
 			isa = PBXGroup;
 			children = (
+				94655ED91BA63A2F007151D3 /* Tone-A.wav */,
+				94655EDA1BA63A2F007151D3 /* Tone-B.wav */,
+				94655EDB1BA63A2F007151D3 /* Tone-C.wav */,
+				94655EDC1BA63A2F007151D3 /* Tone-D.wav */,
 				F17C9CAB1B98D9B00023156E /* AppDelegate.swift */,
 				F17C9CAD1B98D9B00023156E /* ViewController.swift */,
 				F1C1A25B1B9BCF7300B95E31 /* SimonGame.swift */,
@@ -115,6 +129,7 @@
 				F17C9CB71B98D9B00023156E /* Info.plist */,
 				94655ED31BA6305F007151D3 /* StorageFacade.swift */,
 				94655ED51BA632C5007151D3 /* HighscoreAdapter.swift */,
+				94655EE11BA63A84007151D3 /* SoundAdapter.swift */,
 			);
 			path = "Introductory-Team-Project-Simon";
 			sourceTree = "<group>";
@@ -242,6 +257,10 @@
 			files = (
 				F17C9CB61B98D9B00023156E /* LaunchScreen.storyboard in Resources */,
 				F17C9CB31B98D9B00023156E /* Assets.xcassets in Resources */,
+				94655EDD1BA63A2F007151D3 /* Tone-A.wav in Resources */,
+				94655EE01BA63A2F007151D3 /* Tone-D.wav in Resources */,
+				94655EDE1BA63A2F007151D3 /* Tone-B.wav in Resources */,
+				94655EDF1BA63A2F007151D3 /* Tone-C.wav in Resources */,
 				447B7D791BA4F37C00F2979F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +292,7 @@
 				94655ED41BA6305F007151D3 /* StorageFacade.swift in Sources */,
 				F17C9CAC1B98D9B00023156E /* AppDelegate.swift in Sources */,
 				F1C1A25C1B9BCF7300B95E31 /* SimonGame.swift in Sources */,
+				94655EE21BA63A84007151D3 /* SoundAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
