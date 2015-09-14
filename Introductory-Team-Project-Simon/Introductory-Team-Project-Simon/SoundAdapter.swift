@@ -5,6 +5,9 @@
 //  Created by Ryan Dawkins on 9/13/15.
 //  Copyright © 2015 Team Blue Mobile App 2015. All rights reserved.
 //
+// http://soundbible.com/1021-TV-Off-Air.html
+// That's where we got the sounds
+//
 
 import Foundation
 import AVFoundation

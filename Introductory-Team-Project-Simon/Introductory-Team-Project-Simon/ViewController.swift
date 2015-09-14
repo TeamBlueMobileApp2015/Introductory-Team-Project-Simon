@@ -4,6 +4,7 @@ class ViewController: UIViewController {
 
     private var game = SimonGame()
     private let soundAdapter = SoundAdapter()
+    private let highScoreAdapter = HighscoreAdapter()
     
     public enum Buttons : Int {
         case Green = 0
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(self.game.getPattern())
+        self.highscore.text = String(self.highScoreAdapter.GetHighScore())
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,7 +91,10 @@ class ViewController: UIViewController {
         }
         
         // Add in highest score check here...
-        // Use HighscoreAdapter
+        if highScoreAdapter.GetHighScore() < self.game.getScore() {
+            highScoreAdapter.SetHighScore(self.game.getScore())
+            self.highscore.text = String(self.game.getScore())
+        }
         
         if self.game.hasLostTheGame() {
             let alert = UIAlertView()
