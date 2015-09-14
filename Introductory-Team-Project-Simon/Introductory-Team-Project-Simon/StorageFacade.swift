@@ -13,7 +13,10 @@ class StorageFacade {
     private let defaults = NSUserDefaults.standardUserDefaults()
     
     func getString(key : String) -> String {
-        return (self.defaults.valueForKey(key)?.string)!
+        if let value = defaults.stringForKey(key) {
+            return value
+        }
+        return ""
     }
     
     func setString(key : String, value : String) {

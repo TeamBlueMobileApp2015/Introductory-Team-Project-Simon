@@ -15,7 +15,12 @@ class HighscoreAdapter {
     
     func GetHighScore() -> Int {
         let stringValue = storage.getString(HIGHSCORE_STRING)
-        return Int(stringValue)!
+        if stringValue != "" {
+            return Int(stringValue)!
+        }
+        else {
+            return 0
+        }
     }
     
     func SetHighScore(value : Int) {
