@@ -28,10 +28,6 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func testing(){
     }
     
     //Innitiates a new game
@@ -45,48 +41,52 @@ class ViewController: UIViewController {
     //GREEN Button
     // Value 0
     @IBAction func Green_Button_Tap(sender: UIButton) {
-        print("0 - Green Button")
-        self.clicked_Button(Buttons.Green.rawValue)
-        self.soundAdapter.PlaySound(Buttons.Green.rawValue)
+        imageSwitchPressed(Buttons.Green.rawValue)
+        clicked_Button(Buttons.Green.rawValue)
+        playSound(Buttons.Green.rawValue)
     }
+    
     @IBAction func Green_Button_Release(sender: UIButton) {
-        print("-Green Button")
+        imageSwitch(Buttons.Green.rawValue)
     }
     
     //RED Button
     // Value 1
     @IBAction func Red_Button_Tap(sender: UIButton) {
-        print("1 - Red Button")
-        self.clicked_Button(Buttons.Red.rawValue)
-        self.soundAdapter.PlaySound(Buttons.Red.rawValue)
+        imageSwitchPressed(Buttons.Red.rawValue)
+        clicked_Button(Buttons.Red.rawValue)
+        playSound(Buttons.Red.rawValue)
     }
+    
     @IBAction func Red_Button_Release(sender: UIButton) {
-        print("-Red Button")
+        imageSwitch(Buttons.Red.rawValue)
     }
     
     //YELLOW Button
     // Value 2
     @IBAction func Yellow_Button_Tap(sender: UIButton) {
-        print("2 - Yellow Button")
-        self.clicked_Button(Buttons.Yellow.rawValue)
-        self.soundAdapter.PlaySound(Buttons.Yellow.rawValue)
+        imageSwitchPressed(Buttons.Yellow.rawValue)
+        clicked_Button(Buttons.Yellow.rawValue)
+        playSound(Buttons.Yellow.rawValue)
     }
+    
     @IBAction func Yellow_Button_Release(sender: UIButton) {
-        print("-Yellow Button")
+        imageSwitch(Buttons.Yellow.rawValue)
     }
     
     //BLUE Button
     // Value 3
     @IBAction func Blue_Button_Tap(sender: UIButton) {
-        print("3 - Blue Button")
-        self.clicked_Button(Buttons.Blue.rawValue)
-        self.soundAdapter.PlaySound(Buttons.Blue.rawValue)
+        imageSwitchPressed(Buttons.Blue.rawValue)
+        clicked_Button(Buttons.Blue.rawValue)
+        playSound(Buttons.Blue.rawValue)
     }
     
     @IBAction func Blue_Button_Release(sender: UIButton) {
-        print("-Blue Button")
+        imageSwitch(Buttons.Blue.rawValue)
     }
     
+    //Checks game on each button click
     func clicked_Button(buttonClicked : Int) {
         if self.game.gameOver() {
             return
@@ -102,19 +102,15 @@ class ViewController: UIViewController {
         }
         
         if self.game.hasLostTheGame() {
-            let alert = UIAlertView()
-            alert.title = "Game over!"
-            alert.message = "You Lost! :("
-            alert.addButtonWithTitle("Okay")
-            alert.show()
+            let alert = UIAlertController(title: "Game Over", message: "You Lost!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         if self.game.hasWon() {
-            let alert = UIAlertView()
-            alert.title = "Winner Winner Chicken Dinner"
-            alert.message = "You Won! :D"
-            alert.addButtonWithTitle("Okay")
-            alert.show()
+            let alert = UIAlertController(title: "Winner Winner Chicken Dinner", message: "You Won! :D", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
@@ -160,5 +156,5 @@ class ViewController: UIViewController {
             imageSwitch(i)
         }
     }
-    
+
 }
