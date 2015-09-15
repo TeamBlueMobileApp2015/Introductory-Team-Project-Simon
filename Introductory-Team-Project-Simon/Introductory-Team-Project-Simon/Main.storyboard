@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -31,40 +31,37 @@
                                 <state key="normal" backgroundImage="NewRoundButton"/>
                                 <state key="highlighted" backgroundImage="NewRoundButtonPressed"/>
                                 <connections>
-                                    <action selector="NewGame_Tap:" destination="BYZ-38-t0r" eventType="touchDown" id="8wX-ar-ZNh"/>
+                                    <action selector="NewGame_Tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWT-Or-Nj8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0st-K2-9IK" userLabel="Red Button" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0st-K2-9IK" userLabel="Red Button" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
                                 <rect key="frame" x="59" y="191" width="256" height="128"/>
                                 <animations/>
                                 <state key="normal" backgroundImage="RedButton"/>
                                 <state key="selected" backgroundImage="RedButtonPressed"/>
                                 <state key="highlighted" backgroundImage="RedButtonPressed"/>
                                 <connections>
-                                    <action selector="Red_Button_Release:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fZP-aq-EYJ"/>
-                                    <action selector="Red_Button_Tap:" destination="BYZ-38-t0r" eventType="touchDown" id="SBv-Tr-2Pe"/>
+                                    <action selector="clicked_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fen-4T-igp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1V5-2V-2CZ" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1V5-2V-2CZ" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
                                 <rect key="frame" x="59" y="327" width="256" height="128"/>
                                 <animations/>
                                 <state key="normal" backgroundImage="YellowButton"/>
                                 <state key="selected" backgroundImage="YellowButtonPressedV2"/>
                                 <state key="highlighted" backgroundImage="YellowButtonPressedV2"/>
                                 <connections>
-                                    <action selector="Yellow_Button_Release:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eIg-9c-GKf"/>
-                                    <action selector="Yellow_Button_Tap:" destination="BYZ-38-t0r" eventType="touchDown" id="Npe-hF-Uce"/>
+                                    <action selector="clicked_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPz-G6-u4V"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdt-Pw-tCS" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdt-Pw-tCS" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
                                 <rect key="frame" x="191" y="195" width="128" height="256"/>
                                 <animations/>
                                 <state key="normal" backgroundImage="BlueButton"/>
                                 <state key="selected" backgroundImage="BlueButtonPressed"/>
                                 <state key="highlighted" backgroundImage="BlueButtonPressed"/>
                                 <connections>
-                                    <action selector="Blue_Button_Release:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M5Q-Wn-hHY"/>
-                                    <action selector="Blue_Button_Tap:" destination="BYZ-38-t0r" eventType="touchDown" id="r3V-nO-eTo"/>
+                                    <action selector="clicked_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FlQ-kz-2ee"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTS-s5-tdc" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
@@ -74,8 +71,7 @@
                                 <state key="selected" backgroundImage="GreenButtonPressed"/>
                                 <state key="highlighted" backgroundImage="GreenButtonPressed"/>
                                 <connections>
-                                    <action selector="Green_Button_Release:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2cu-Kv-oJF"/>
-                                    <action selector="Green_Button_Tap:" destination="BYZ-38-t0r" eventType="touchDown" id="aof-97-DGk"/>
+                                    <action selector="clicked_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1u-dL-M0E"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Simon Game" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wic-JV-FBB">

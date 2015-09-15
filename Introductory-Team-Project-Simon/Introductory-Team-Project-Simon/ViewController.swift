@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print(self.game.getPattern())
         self.highscore.text = String(self.highScoreAdapter.GetHighScore())
+        self.showPattern(0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,104 +36,50 @@ class ViewController: UIViewController {
         self.game = SimonGame()
         self.current_score.text = "0"
         print(self.game.getPattern())
-        showPattern()
-    }
-    
-    //GREEN Button
-    // Value 0
-    @IBAction func Green_Button_Tap(sender: UIButton) {
-        imageSwitchPressed(Buttons.Green.rawValue)
-        clicked_Button(Buttons.Green.rawValue)
-        playSound(Buttons.Green.rawValue)
-    }
-    
-    @IBAction func Green_Button_Release(sender: UIButton) {
-        imageSwitch(Buttons.Green.rawValue)
-    }
-    
-    //RED Button
-    // Value 1
-    @IBAction func Red_Button_Tap(sender: UIButton) {
-        imageSwitchPressed(Buttons.Red.rawValue)
-        clicked_Button(Buttons.Red.rawValue)
-        playSound(Buttons.Red.rawValue)
-    }
-    
-    @IBAction func Red_Button_Release(sender: UIButton) {
-        imageSwitch(Buttons.Red.rawValue)
-    }
-    
-    //YELLOW Button
-    // Value 2
-    @IBAction func Yellow_Button_Tap(sender: UIButton) {
-        imageSwitchPressed(Buttons.Yellow.rawValue)
-        clicked_Button(Buttons.Yellow.rawValue)
-        playSound(Buttons.Yellow.rawValue)
-    }
-    
-    @IBAction func Yellow_Button_Release(sender: UIButton) {
-        imageSwitch(Buttons.Yellow.rawValue)
-    }
-    
-    //BLUE Button
-    // Value 3
-    @IBAction func Blue_Button_Tap(sender: UIButton) {
-        imageSwitchPressed(Buttons.Blue.rawValue)
-        clicked_Button(Buttons.Blue.rawValue)
-        playSound(Buttons.Blue.rawValue)
-    }
-    
-    @IBAction func Blue_Button_Release(sender: UIButton) {
-        imageSwitch(Buttons.Blue.rawValue)
+        self.showPattern(0)
     }
     
     //Checks game on each button click
-    func clicked_Button(buttonClicked : Int) {
-        if self.game.gameOver() {
-            return
-        }
-        if self.game.checkMove(buttonClicked) {
-            self.current_score.text = String(self.game.getScore())
-        }
-        
-        // Add in highest score check here...
-        if highScoreAdapter.GetHighScore() < self.game.getScore() {
-            highScoreAdapter.SetHighScore(self.game.getScore())
-            self.highscore.text = String(self.game.getScore())
-        }
-        
-        if self.game.hasLostTheGame() {
-            let alert = UIAlertController(title: "Game Over", message: "You Lost!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-        if self.game.hasWon() {
+    @IBAction func clicked_Button(sender: UIButton) {
+
+        let buttonClicked = sender.tag
+        playSound(buttonClicked)
+
+        let finishedRound = self.game.clickedButton(buttonClicked)
+
+        if self.game.gameWon {
             let alert = UIAlertController(title: "Winner Winner Chicken Dinner", message: "You Won! :D", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            return
         }
+
+        if self.game.gameLost {
+            let alert = UIAlertController(title: "Game Over", message: "You Lost!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if finishedRound {
+            self.showPattern(0)
+        }
+        
     }
     
-    //Switches the buttons background to a normal state version
-    func imageSwitch(buttonClicked : Int){
-        switch buttonClicked{
-            case 0: greenButton.setBackgroundImage(UIImage(named: "GreenButton"), forState: UIControlState.Normal)
-            case 1: redButton.setBackgroundImage(UIImage(named: "RedButton"), forState: UIControlState.Normal)
-            case 2: yellowButton.setBackgroundImage(UIImage(named: "YellowButton"), forState: UIControlState.Normal)
-            case 3: blueButton.setBackgroundImage(UIImage(named: "BlueButton"), forState: UIControlState.Normal)
-            default: break
-        }
-    }
-    
-    //Switches the buttons background to a pressed state version
-    func imageSwitchPressed(buttonClicked : Int ){
-        switch buttonClicked{
-            case 0: greenButton.setBackgroundImage(UIImage(named: "GreenButtonPressed"), forState: UIControlState.Normal)
-            case 1: redButton.setBackgroundImage(UIImage(named: "RedButtonPressed"), forState: UIControlState.Normal)
-            case 2: yellowButton.setBackgroundImage(UIImage(named: "YellowButtonPressedV2"), forState: UIControlState.Normal)
-            case 3: blueButton.setBackgroundImage(UIImage(named: "BlueButtonPressed"), forState: UIControlState.Normal)
-            default: break
+    func getButton(buttonNumber : Int) -> UIButton? {
+        
+        switch(buttonNumber) {
+        case Buttons.Green.rawValue:
+            return greenButton
+        case Buttons.Blue.rawValue:
+            return blueButton
+        case Buttons.Red.rawValue:
+            return redButton
+        case Buttons.Yellow.rawValue:
+            return yellowButton
+        default:
+            return nil
         }
     }
     
@@ -148,13 +95,47 @@ class ViewController: UIViewController {
     }
     
     //Run through the pattern demonstrating it for the user
-    func showPattern(){
-        let pattern = game.getPattern()
-        for i in pattern{
-            imageSwitchPressed(i)
-            playSound(i)
-            imageSwitch(i)
+    func showPattern(currentButton : Int){
+        
+        let pattern = self.game.getPattern()
+        
+        let btn = self.getButton(pattern[currentButton])
+        
+        if currentButton == self.game.getLevel() {
+            return
         }
+        
+        UIView.animateWithDuration(0.5,
+            delay: 1.0,
+            options: UIViewAnimationOptions.CurveLinear,
+            animations: {
+            },
+            completion: { finished in
+                UIView.animateWithDuration(0.5,
+                    delay: 1.0,
+                    options: UIViewAnimationOptions.CurveLinear,
+                    animations: {
+                        self.playSound(currentButton)
+                        btn?.alpha = 0.99
+                        btn?.highlighted = true
+                    },
+                    completion: { finished in
+                        UIView.animateWithDuration(0.5,
+                            delay: 0.0,
+                            options: UIViewAnimationOptions.CurveLinear,
+                            animations: {
+                                btn?.alpha = 1.0
+                                btn?.highlighted = false
+                            },
+                            completion: { finished in
+                                self.showPattern(currentButton + 1)
+                            }
+                            
+                        )
+                    }
+                )
+            }
+        )
     }
 
 }
