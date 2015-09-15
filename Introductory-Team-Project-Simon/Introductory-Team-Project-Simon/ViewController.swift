@@ -130,7 +130,7 @@ class ViewController: UIViewController {
         switch buttonClicked{
             case 0: greenButton.setBackgroundImage(UIImage(named: "GreenButtonPressed"), forState: UIControlState.Normal)
             case 1: redButton.setBackgroundImage(UIImage(named: "RedButtonPressed"), forState: UIControlState.Normal)
-            case 2: yellowButton.setBackgroundImage(UIImage(named: "YellowButtonPressed"), forState: UIControlState.Normal)
+            case 2: yellowButton.setBackgroundImage(UIImage(named: "YellowButtonPressedV2"), forState: UIControlState.Normal)
             case 3: blueButton.setBackgroundImage(UIImage(named: "BlueButtonPressed"), forState: UIControlState.Normal)
             default: break
         }
