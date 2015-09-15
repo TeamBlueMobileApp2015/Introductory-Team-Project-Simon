@@ -6,7 +6,14 @@ class ViewController: UIViewController {
     private let soundAdapter = SoundAdapter()
     private let highScoreAdapter = HighscoreAdapter()
     
-    public enum Buttons : Int {
+    @IBOutlet weak var current_score: UITextField!
+    @IBOutlet weak var highscore: UITextField!
+    @IBOutlet weak var greenButton: SOXShapedTapButton!
+    @IBOutlet weak var redButton: SOXShapedTapButton!
+    @IBOutlet weak var yellowButton: SOXShapedTapButton!
+    @IBOutlet weak var blueButton: SOXShapedTapButton!
+    
+    internal enum Buttons : Int {
         case Green = 0
         case Red = 1
         case Yellow = 2
@@ -27,10 +34,12 @@ class ViewController: UIViewController {
     func testing(){
     }
     
+    //Innitiates a new game
     @IBAction func NewGame_Tap(sender: UIButton) {
         self.game = SimonGame()
         self.current_score.text = "0"
         print(self.game.getPattern())
+        showPattern()
     }
     
     //GREEN Button
@@ -78,10 +87,6 @@ class ViewController: UIViewController {
         print("-Blue Button")
     }
     
-    @IBOutlet weak var highscore: UITextField!
-    
-    @IBOutlet weak var current_score: UITextField!
-    
     func clicked_Button(buttonClicked : Int) {
         if self.game.gameOver() {
             return
@@ -111,8 +116,49 @@ class ViewController: UIViewController {
             alert.addButtonWithTitle("Okay")
             alert.show()
         }
-        
+    }
+    
+    //Switches the buttons background to a normal state version
+    func imageSwitch(buttonClicked : Int){
+        switch buttonClicked{
+            case 0: greenButton.setBackgroundImage(UIImage(named: "GreenButton"), forState: UIControlState.Normal)
+            case 1: redButton.setBackgroundImage(UIImage(named: "RedButton"), forState: UIControlState.Normal)
+            case 2: yellowButton.setBackgroundImage(UIImage(named: "YellowButton"), forState: UIControlState.Normal)
+            case 3: blueButton.setBackgroundImage(UIImage(named: "BlueButton"), forState: UIControlState.Normal)
+            default: break
+        }
+    }
+    
+    //Switches the buttons background to a pressed state version
+    func imageSwitchPressed(buttonClicked : Int ){
+        switch buttonClicked{
+            case 0: greenButton.setBackgroundImage(UIImage(named: "GreenButtonPressed"), forState: UIControlState.Normal)
+            case 1: redButton.setBackgroundImage(UIImage(named: "RedButtonPressed"), forState: UIControlState.Normal)
+            case 2: yellowButton.setBackgroundImage(UIImage(named: "YellowButtonPressed"), forState: UIControlState.Normal)
+            case 3: blueButton.setBackgroundImage(UIImage(named: "BlueButtonPressed"), forState: UIControlState.Normal)
+            default: break
+        }
+    }
+    
+    //Plays the sound designated for the color code
+    func playSound(buttonClicked: Int){
+        switch buttonClicked{
+            case 0: self.soundAdapter.PlaySound(Buttons.Green.rawValue)
+            case 1: self.soundAdapter.PlaySound(Buttons.Red.rawValue)
+            case 2: self.soundAdapter.PlaySound(Buttons.Yellow.rawValue)
+            case 3: self.soundAdapter.PlaySound(Buttons.Blue.rawValue)
+        default: break
+        }
+    }
+    
+    //Run through the pattern demonstrating it for the user
+    func showPattern(){
+        let pattern = game.getPattern()
+        for i in pattern{
+            imageSwitchPressed(i)
+            playSound(i)
+            imageSwitch(i)
+        }
     }
     
 }
-

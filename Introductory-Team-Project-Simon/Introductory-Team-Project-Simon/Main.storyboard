@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,21 +18,25 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-Rc-GLR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hha-nK-UWV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDp-Ze-m6j">
                                 <rect key="frame" x="53" y="583" width="268" height="43"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="NewRoundButton"/>
                                 <state key="highlighted" backgroundImage="NewRoundButtonPressed"/>
                                 <connections>
                                     <action selector="NewGame_Tap:" destination="BYZ-38-t0r" eventType="touchDown" id="8wX-ar-ZNh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0st-K2-9IK" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0st-K2-9IK" userLabel="Red Button" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
                                 <rect key="frame" x="59" y="191" width="256" height="128"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="RedButton"/>
                                 <state key="selected" backgroundImage="RedButtonPressed"/>
                                 <state key="highlighted" backgroundImage="RedButtonPressed"/>
@@ -43,6 +47,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1V5-2V-2CZ" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
                                 <rect key="frame" x="59" y="327" width="256" height="128"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="YellowButton"/>
                                 <state key="selected" backgroundImage="YellowButtonPressedV2"/>
                                 <state key="highlighted" backgroundImage="YellowButtonPressedV2"/>
@@ -53,6 +58,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdt-Pw-tCS" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
                                 <rect key="frame" x="191" y="195" width="128" height="256"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="BlueButton"/>
                                 <state key="selected" backgroundImage="BlueButtonPressed"/>
                                 <state key="highlighted" backgroundImage="BlueButtonPressed"/>
@@ -63,6 +69,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTS-s5-tdc" customClass="SOXShapedTapButton" customModule="Introductory_Team_Project_Simon" customModuleProvider="target">
                                 <rect key="frame" x="55" y="195" width="128" height="256"/>
+                                <animations/>
                                 <state key="normal" backgroundImage="GreenButton"/>
                                 <state key="selected" backgroundImage="GreenButtonPressed"/>
                                 <state key="highlighted" backgroundImage="GreenButtonPressed"/>
@@ -73,46 +80,58 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Simon Game" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wic-JV-FBB">
                                 <rect key="frame" x="47" y="23" width="280" height="60"/>
+                                <animations/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="4GG-YQ-gEu">
                                 <rect key="frame" x="59" y="123" width="256" height="51"/>
+                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="8j7-ob-2Jd">
                                 <rect key="frame" x="59" y="493" width="256" height="51"/>
+                                <animations/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Highscore: " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-np-nc9">
                                 <rect key="frame" x="69" y="503" width="101" height="31"/>
+                                <animations/>
                                 <color key="textColor" red="0.91108349119999998" green="0.1287398394" blue="0.13088453820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Score:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qcj-md-Q5Z">
                                 <rect key="frame" x="69" y="133" width="101" height="31"/>
+                                <animations/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zj-J2-BNj">
                                 <rect key="frame" x="139" y="134" width="164" height="30"/>
+                                <animations/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234567890" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qTo-IT-M1e">
                                 <rect key="frame" x="169" y="505" width="134" height="30"/>
+                                <animations/>
                                 <color key="textColor" red="0.91108349119999998" green="0.1287398394" blue="0.13088453820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
+                        <animations/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="blueButton" destination="qdt-Pw-tCS" id="uJR-wK-5mv"/>
                         <outlet property="current_score" destination="9zj-J2-BNj" id="Css-Tv-fBv"/>
+                        <outlet property="greenButton" destination="TTS-s5-tdc" id="Lj8-hi-JBe"/>
                         <outlet property="highscore" destination="qTo-IT-M1e" id="cRs-Zu-Khi"/>
+                        <outlet property="redButton" destination="0st-K2-9IK" id="j6Q-Fd-n9M"/>
+                        <outlet property="yellowButton" destination="1V5-2V-2CZ" id="rxH-9J-pfG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
