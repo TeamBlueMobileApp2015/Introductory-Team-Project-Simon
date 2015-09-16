@@ -5,6 +5,7 @@ class ViewController: UIViewController {
     private var game = SimonGame()
     private let soundAdapter = SoundAdapter()
     private let highScoreAdapter = HighscoreAdapter()
+    private var didLoad = false
     
     @IBOutlet weak var current_score: UITextField!
     @IBOutlet weak var highscore: UITextField!
@@ -22,9 +23,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.game.getPattern())
-        self.highscore.text = String(self.highScoreAdapter.GetHighScore())
-        self.showPattern(0)
+        if !self.didLoad {
+            print(self.game.getPattern())
+            self.highscore.text = String(self.highScoreAdapter.GetHighScore())
+            self.showPattern(0)
+        }
+        self.didLoad = true
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,7 +137,7 @@ class ViewController: UIViewController {
             delay: 1.0,
             options: UIViewAnimationOptions.CurveLinear,
             animations: {
-                self.playSound(currentButton)
+                self.playSound(pattern[currentButton])
                 btn?.alpha = 0.99
                 btn?.highlighted = true
             },
