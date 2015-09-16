@@ -6,6 +6,7 @@ class ViewController: UIViewController {
     private let soundAdapter = SoundAdapter()
     private let highScoreAdapter = HighscoreAdapter()
     private var didLoad = false
+    private var isDisplaying = false
     
     @IBOutlet weak var current_score: UITextField!
     @IBOutlet weak var highscore: UITextField!
@@ -51,6 +52,10 @@ class ViewController: UIViewController {
     //Checks game on each button click
     @IBAction func clicked_Button(sender: UIButton) {
 
+        if isDisplaying {
+            return
+        }
+        
         let buttonClicked = sender.tag
         playSound(buttonClicked)
 
@@ -130,10 +135,12 @@ class ViewController: UIViewController {
         let btn = self.getButton(pattern[currentButton])
         
         if currentButton == self.game.getLevel() {
+            self.isDisplaying = false
             return
         }
         
-        UIView.animateWithDuration(0.5,
+        self.isDisplaying = true
+        UIView.animateWithDuration(0.25,
             delay: 1.0,
             options: UIViewAnimationOptions.CurveLinear,
             animations: {
@@ -142,7 +149,7 @@ class ViewController: UIViewController {
                 btn?.highlighted = true
             },
             completion: { finished in
-                UIView.animateWithDuration(0.5,
+                UIView.animateWithDuration(0.25,
                     delay: 0.0,
                     options: UIViewAnimationOptions.CurveLinear,
                     animations: {
