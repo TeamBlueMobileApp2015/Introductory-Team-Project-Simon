@@ -36,7 +36,8 @@ class ViewController: UIViewController {
         self.game = SimonGame()
         self.current_score.text = "0"
         print(self.game.getPattern())
-        self.showPattern(0)
+        //self.showPattern(0)
+        delayPattern()
     }
     
     //Checks game on each button click
@@ -62,9 +63,17 @@ class ViewController: UIViewController {
         }
         
         if finishedRound {
-            self.showPattern(0)
+            self.updateScore()
+            delayPattern()
         }
         
+    }
+    
+    func updateScore() {
+        self.current_score.text = String(self.game.getLevel())
+        if self.game.getLevel() > highScoreAdapter.GetHighScore() {
+            highScoreAdapter.SetHighScore(self.game.getLevel())
+        }
     }
     
     func getButton(buttonNumber : Int) -> UIButton? {
@@ -94,6 +103,17 @@ class ViewController: UIViewController {
         }
     }
     
+    func delayPattern() {
+        let seconds = 1.0
+        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
+        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            
+            self.showPattern(0)
+            
+        })
+    }
+    
     //Run through the pattern demonstrating it for the user
     func showPattern(currentButton : Int){
         
@@ -109,30 +129,22 @@ class ViewController: UIViewController {
             delay: 1.0,
             options: UIViewAnimationOptions.CurveLinear,
             animations: {
+                self.playSound(currentButton)
+                btn?.alpha = 0.99
+                btn?.highlighted = true
             },
             completion: { finished in
                 UIView.animateWithDuration(0.5,
-                    delay: 1.0,
+                    delay: 0.0,
                     options: UIViewAnimationOptions.CurveLinear,
                     animations: {
-                        self.playSound(currentButton)
-                        btn?.alpha = 0.99
-                        btn?.highlighted = true
+                        btn?.alpha = 1.0
+                        btn?.highlighted = false
                     },
                     completion: { finished in
-                        UIView.animateWithDuration(0.5,
-                            delay: 0.0,
-                            options: UIViewAnimationOptions.CurveLinear,
-                            animations: {
-                                btn?.alpha = 1.0
-                                btn?.highlighted = false
-                            },
-                            completion: { finished in
-                                self.showPattern(currentButton + 1)
-                            }
-                            
-                        )
+                        self.showPattern(currentButton + 1)
                     }
+                    
                 )
             }
         )
